@@ -1,0 +1,59 @@
+<div class="">
+  <div class="breadcrumb">
+    <h1>API DATA TABLE</h1>
+    <ul>
+      <li><a href="#">Api data Table</a></li>
+      <li>Api Data</li>
+    </ul>
+    <div style="margin: 0px 893px;">
+      <h4><a  [routerLink]="['/tables/filter']" routerLinkActivate="router-link-activate">Datatable</a>&nbsp;
+      <a style="position: absolute;margin: 0px -162px;" [routerLink]="['/forms/basic']" routerLinkActivate="router-link-activate">Create</a>
+      </h4>
+    </div>
+  </div>
+
+  <div class="separator-breadcrumb border-top"></div>
+  <div class="row">
+    <!-- <div class="col-md-4">
+      <div class="form-group">
+        <input id="email" placeholder="Search Products" [formControl]="searchControl" class="form-control form-control-rounded" type="email">
+      </div>
+    </div> -->
+    <div class="col-md-12">
+        <div class="card  o-hidden">
+            <ngx-datatable
+            style="height: 500px; box-shadow: none"
+            class="material fullscreen"
+            [columnMode]="'force'"
+            [headerHeight]="40"
+            [footerHeight]="40"
+            [rowHeight]="50"
+            [scrollbarV]="true"
+            [rows]="readData"
+            >
+            
+              <ngx-datatable-column name="userId">
+                <ng-template ngx-datatable-header-template>
+                  Userid
+                </ng-template>
+              </ngx-datatable-column>
+              <ngx-datatable-column name="id">
+                <ng-template ngx-datatable-header-template>
+                  Id
+                </ng-template>
+              </ngx-datatable-column>
+              <ngx-datatable-column name="title">
+                <ng-template ngx-datatable-header-template>
+                  Title
+                </ng-template>
+              </ngx-datatable-column>
+              <ngx-datatable-column name="completed">
+                <ng-template ngx-datatable-header-template>
+                  Completed
+                </ng-template>
+              </ngx-datatable-column> 
+          </ngx-datatable>
+        </div>
+    </div>
+  </div>
+</div>  

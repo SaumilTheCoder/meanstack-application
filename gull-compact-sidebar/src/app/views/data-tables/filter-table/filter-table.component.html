@@ -1,0 +1,68 @@
+<div class="">
+  <div class="breadcrumb">
+    <h1>Filter</h1>
+    <ul>
+      <li><a href="#">Data Table</a></li>
+      <li>Filter</li>
+    </ul>
+    <div style="margin: 0px 893px;">
+      <h4><a  [routerLink]="['/tables/filter']" routerLinkActivate="router-link-activate">Datatable</a>&nbsp;
+      <a style="position: absolute;margin: 0px -162px;" [routerLink]="['/forms/basic']" routerLinkActivate="router-link-activate">Create</a>
+      </h4>
+    </div>
+  </div>
+  <div class="separator-breadcrumb border-top"></div>
+  <div class="row">
+    <div class="col-md-4">
+      <div class="form-group">
+        <input id="email" placeholder="Search Products" [formControl]="searchControl" class="form-control form-control-rounded" type="email">
+      </div>
+    </div>
+    <div class="col-md-12">
+        <div class="card  o-hidden">
+            <ngx-datatable
+            style="height: 500px; box-shadow: none"
+            class="material fullscreen"
+            [columnMode]="'force'"
+            [headerHeight]="40"
+            [footerHeight]="40"
+            [rowHeight]="50"
+            [scrollbarV]="true"
+            [rows]="Books"
+            >
+            <!-- <ngx-datatable-column name="rows._id">
+              <ng-template ngx-datatable-header-template>
+                _id
+              </ng-template>
+            </ngx-datatable-column> -->
+            <ngx-datatable-column name="name">
+              <ng-template ngx-datatable-header-template>
+                Name
+              </ng-template>
+            </ngx-datatable-column>
+              <ngx-datatable-column name="price">
+                <ng-template ngx-datatable-header-template>
+                  Price
+                </ng-template>
+              </ngx-datatable-column>
+              <ngx-datatable-column name="description">
+                <ng-template ngx-datatable-header-template>
+                  Description
+                </ng-template>
+              </ngx-datatable-column>
+              <ngx-datatable-column name="Action" [width]='200'>
+                <ng-template let-row="row" let-value="value" ngx-datatable-cell-template>
+                  <!-- {{row.id}} --> 
+                  <!-- [routerLink]="['/forms/edit', row.id]" -->
+                  <a [routerLink]="['/forms/edit/',row._id]" class="btn btn-primary">Update</a>
+                  <!-- <button class="btn btn-wide btn-outline-secondary" routerLink="/forms/edit/{{row._id}}">Edit</button> -->
+                  <!-- <button class="btn btn-sm btn-primary" routerLink="/edit-book/{{book._id}}">Edit</button> -->
+                  
+                  <button class="btn btn-outline-danger" (click)="delete(row._id,1)">Delete</button>
+                </ng-template>
+              </ngx-datatable-column>
+          </ngx-datatable>
+        </div>
+    </div>
+  </div>
+</div>  
